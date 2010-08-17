@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+    <head> 
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" /> 
+        <title>SOD - Symbols On Demand</title> 
+        <meta name="description" content="Point. Symbol-supported browsing" /> 
+        <meta name="keywords" content="widgit online,symbols,point,insite,accessibility,special needs,literacy,communication,point" /> 
+	<link rel="stylesheet" href="pointit.css" type="text/css" /> 
+	<script language="JavaScript" type="text/javascript" src="jquery.js"></script> 
+	<script language="JavaScript" type="text/javascript" src="pointit.js"></script> 
+    </head> 
+	   <body >
+	   <script>
+	   $.getJSON('http://straight-street.com/api/symbols/EN/sweet?appid=sourceymonkey&callback=', function(data) {
+    $('#images').html(print_r(data));
+    alert('Load was performed.');
+  }
+);
+
+$.getJSON("http://twitter.com/status/user_timeline/willwade.json?count=1&callback=?",
+   function(result){
+      if (result.response.data.users[0].state == 'online') {
+       $("#images").html("fuck");
+      }
+   }
+);
+	   </script>
+<div id="images"></div>
+    <div id="content"> 
+<p>I went to the animal fair,
+The birds and the beasts were there,
+The big baboon by the light of the moon
+Was combing his auburn hair,
+The monkey bumped the skunk,
+And sat on the elephant's trunk;
+The elephant sneezed and fell to his knees,
+And that was the end of the monk,
+|: The monk, the monk, the monk.</p><hr />
+<p> monkey, elephant, jesus, children, family, apple, pear, orange, fun, happy, sad, donkey, food, yellow, red, green, tortoise, cheese, tomato, potato </p><hr>
+      <hr class="orange" /> 
+      <br /> 
+</div> 
+<script>
+function print_r(theObj){
+  if(theObj.constructor == Array ||
+     theObj.constructor == Object){
+    document.write("<ul>")
+    for(var p in theObj){
+      if(theObj[p].constructor == Array||
+         theObj[p].constructor == Object){
+document.write("<li>["+p+"] => "+typeof(theObj)+"</li>");
+        document.write("<ul>")
+        print_r(theObj[p]);
+        document.write("</ul>")
+      } else {
+document.write("<li>["+p+"] => "+theObj[p]+"</li>");
+      }
+    }
+    document.write("</ul>")
+  }
+}
+
+</script>
+</body> 
+</html>
